@@ -25,7 +25,7 @@ RUN pip install -r requirements.txt
 ADD docker/entrypoint.sh entrypoint.sh
 ADD scripts/start-torchserve.sh start-torchserve.sh
 
-COPY --from=builder /usr/app/model_store model_store
+COPY --from=builder /usr/app/model_store model-store
 
 ENTRYPOINT [ "./entrypoint.sh" ]
 
