@@ -1,5 +1,8 @@
+# NOTE: we might want to use a -gpu image later
+ARG TORCHSERVE_VERSION=0.9.0-cpu
+
 # Builder image
-FROM pytorch/torchserve AS builder
+FROM pytorch/torchserve:${TORCHSERVE_VERSION} AS builder
 
 WORKDIR /usr/app
 ADD requirements.txt .
@@ -14,7 +17,7 @@ ADD scripts/create-archive.sh scripts/create-archive.sh
 RUN ./scripts/create-archive.sh
 
 # Production image
-FROM pytorch/torchserve
+FROM pytorch/torchserve:${TORCHSERVE_VERSION}
 
 ADD requirements.txt .
 RUN pip install -r requirements.txt

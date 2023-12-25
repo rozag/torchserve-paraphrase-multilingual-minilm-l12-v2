@@ -3,7 +3,7 @@ build-archive:
 	./scripts/create-archive.sh
 
 build-docker:
-	docker build -t torchserve-all-minilm-l6-v2 .
+	docker build -t torchserve-paraphrase-multilingual-minilm-l12-v2 .
 
 serve: build-archive
 	bash ./scripts/start-torchserve.sh

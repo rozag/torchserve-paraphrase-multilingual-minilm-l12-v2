@@ -1,4 +1,9 @@
-# Running all-MiniLM-L6-v2 with TorchServe 
+**Note:** this is a
+[fork](https://github.com/clems4ever/torchserve-all-minilm-l6-v2)
+adapted to run
+[sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2).
+
+# Running all-MiniLM-L6-v2 with TorchServe
 
 This repository contains everything needed to deploy a production-ready service for
 computing sentence similarity embeddings using the model
@@ -28,7 +33,7 @@ docker run -p 8080:8080 -it ghcr.io/clems4ever/torchserve-all-minilm-l6-v2:lates
 
 Then, go to [Usage](#usage) to check how to use the service.
 
-Note that the command can be further optimized for production by using settings documented in the 
+Note that the command can be further optimized for production by using settings documented in the
 [TorchServe documentation](https://github.com/pytorch/serve/blob/master/docker/README.md#running-torchserve-in-a-production-docker-environment)
 
 Also note that by using this docker image and even if you have a GPU available, the inferences will be done on CPU with
@@ -90,11 +95,11 @@ You should get an output similar to
 Many thanks to:
 
 - [Stane Aurelius](https://supertype.ai/author/saurelius/) who wrote
-[a great post](https://supertype.ai/notes/serving-pytorch-w-torchserve/) about the details on how to deploy a model with
-tochserve. I highly recommend reading it.
+  [a great post](https://supertype.ai/notes/serving-pytorch-w-torchserve/) about the details on how to deploy a model with
+  tochserve. I highly recommend reading it.
 
 - The community publishing models on [HuggingFace](https://huggingface.co/) and particularly to the team who
-have produced the [all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2) model and have shared it.
+  have produced the [all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2) model and have shared it.
 
 - The Microsoft Research team who produced the paper about [MiniLM](https://arxiv.org/abs/2002.10957).
 
